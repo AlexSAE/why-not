@@ -42,8 +42,11 @@ Todo
 
 
 ## API
+
+```
 /v1/message/read/{lat},{long}
 /v1/message/write/{lat},{long},{message}
 /v1/comment/write/{message_id}/{comment}
 /v1/comment/vote/{message_id}
 /v1/user/validate/{user_id}/{code}
+```
