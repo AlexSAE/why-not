@@ -1,1 +1,5 @@
 /* Empty. Add your own CSS if you like */
+.item .badge {
+	left: 23px;
+	right: auto;
+}
