@@ -1,12 +1,12 @@
 # Why not
 
 ## TODO:
-- App name
-- Abstract
-- Technology
+- App name ✓
+- Abstract ✓
+- Technology ✓
 - Design
 - Server
-- Git
+- Git ✓
 - Test
 
 
