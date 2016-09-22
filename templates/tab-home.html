@@ -1,11 +1,11 @@
 <ion-view view-title="Home">
   <ion-content>
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="question in questions" type="item-text-wrap" href="#/tab/answer/{{question.id}}">
       
-        <span class="badge badge-assertive">1</span>
-        <h2>{{chat.name}}</h2>
-        <p>{{chat.lastText}}</p>
+        <span class="badge badge-assertive">{{question.votes}}</span>
+        <h2>{{question.text}}</h2>
+        <p>{{question.text}}</p>
         <i class="icon ion-chevron-right icon-accessory"></i>
 
         <!-- <ion-option-button class="button-assertive" ng-click="remove(chat)">

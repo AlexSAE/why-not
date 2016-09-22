@@ -2,7 +2,7 @@ angular.module('starter.controllers', [])
 
 .controller('AskCtrl', function($scope) {})
 
-.controller('HomeCtrl', function($scope, Chats) {
+.controller('HomeCtrl', function($scope, Chats, $http) {
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
@@ -11,14 +11,29 @@ angular.module('starter.controllers', [])
   //$scope.$on('$ionicView.enter', function(e) {
   //});
 
+  $http.get('questions.json').success(function(data){
+    $scope.questions = data;
+  });
+
   $scope.chats = Chats.all();
   $scope.remove = function(chat) {
     Chats.remove(chat);
   };
 })
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
+.controller('AnswersCtrl', function($scope, $stateParams, Chats, $http) {
+  //$scope.chat = Chats.get($stateParams.chatId);
+  $scope.answers = $stateParams.questionId;
+
+
+  $http.get('questions.json').success(function(data){
+    angular.forEach(data, function(value, key) {
+      if (value.id == $stateParams.questionId) {
+        $scope.question = value;
+      }
+    });
+  });
+
 })
 
 .controller('SettingsCtrl', function($scope) {

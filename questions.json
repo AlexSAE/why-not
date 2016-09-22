@@ -1,0 +1,33 @@
+[
+	{
+		"id" : 1,
+		"text": "lorem ipsum",
+		"votes": 3,
+		"answers": [
+			{
+				"id":5,
+				"text": "prvi odgovor"
+			},
+			{
+				"id":6,
+				"text": "drugi odgovor"
+			},
+			{
+				"id":7,
+				"text": "treci odgovor"
+			}
+		]
+	},
+	{
+		"id" : 2,
+		"text": "neko pitanje",
+		"votes": 6,
+		"answers": []
+	},
+	{
+		"id" : 3,
+		"text": "drugo neko pitanje",
+		"votes": 0,
+		"answers": []
+	}
+]
