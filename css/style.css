@@ -3,3 +3,7 @@
 	left: 23px;
 	right: auto;
 }
+
+.question-tab {
+	display: none;
+}
