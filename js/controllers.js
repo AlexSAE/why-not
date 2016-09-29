@@ -14,6 +14,9 @@ angular.module('starter.controllers', [])
   $http.get('questions.json').success(function(data){
     $scope.questions = data;
   });
+  /*$http.get('http://localhost/why-not/api/questions.php').success(function(data){
+    $scope.questions = data;
+  });*/
 
   $scope.chats = Chats.all();
   $scope.remove = function(chat) {
@@ -33,6 +36,13 @@ angular.module('starter.controllers', [])
       }
     });
   });
+  /*$http.get('http://localhost/why-not/api/questions.php').success(function(data){
+    angular.forEach(data, function(value, key) {
+      if (value.id == $stateParams.questionId) {
+        $scope.question = value;
+      }
+    });
+  });*/
 
 })
 
