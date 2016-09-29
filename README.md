@@ -38,7 +38,7 @@ https://github.com/brankko/why-not/
 
 ## Tesing
 
-Todo
+https://build.phonegap.com/apps/2284618/share
 
 
 ## API
