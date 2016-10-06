@@ -4,7 +4,7 @@
     <h2>Write a question...</h2>
     
     <label class="item item-input">
-      <textarea placeholder="Comments" rows="15"></textarea>
+      <textarea id="questionText" ng-model="questionText" placeholder="Comments" rows="15"></textarea>
     </label>
 
     <div class="row">
@@ -14,7 +14,7 @@
       </div>
 
       <div class="col col-50"> 
-        <button class="button button-block button-positive">Ask</button>
+        <button ng-click="askQuestion()" class="button button-block button-positive">Ask</button>
       </div>
   
     </div>
