@@ -19,7 +19,7 @@ function getQuestions($lat, $lon) {
 	}
 
 	// Prepared query with ? as placeholder for parameters
-	$query = "SELECT question_id, question_text, question_votes FROM questions WHERE question_status = 1";
+	$query = "SELECT question_id, question_text, question_votes FROM questions WHERE question_status = 1 ORDER BY question_id DESC";
 
 	// Get instance of statement
 	$statement = $mysqli->stmt_init();

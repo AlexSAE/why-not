@@ -54,7 +54,6 @@ angular.module('starter.controllers', [])
   //$scope.chat = Chats.get($stateParams.chatId);
   $scope.answers = $stateParams.questionId;
 
-
   $http.get('http://localhost/why-not/api/questions.php?action=getQuestions').success(function(data){
     angular.forEach(data, function(value, key) {
       if (value.id == $stateParams.questionId) {
@@ -62,13 +61,38 @@ angular.module('starter.controllers', [])
       }
     });
   });
-  /*$http.get('http://localhost/why-not/api/questions.php').success(function(data){
-    angular.forEach(data, function(value, key) {
-      if (value.id == $stateParams.questionId) {
-        $scope.question = value;
-      }
+
+  $scope.sendAnswer = function() {
+
+    var data = $.param({
+        question_id: $stateParams.questionId,
+        user_id: 1,
+        text: $("#answerText").val()
     });
-  });*/
+
+    var config = {
+        headers : {
+            'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+        }
+    };
+
+
+    $http.post('api/questions.php?action=addAnswer', data, config).then(
+       function(response){
+            $("#answerText").val('');
+            $http.get('http://localhost/why-not/api/questions.php?action=getQuestions').success(function(data){
+              angular.forEach(data, function(value, key) {
+                if (value.id == $stateParams.questionId) {
+                  $scope.question = value;
+                }
+              });
+            });
+       }, 
+       function(response){
+         console.log('greska');
+       }
+    );
+  };
 
 })
 

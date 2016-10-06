@@ -12,5 +12,16 @@
         {{answer.text}}
       </div>
     </div>
+
+    <h2>Write a answer</h2>
+    
+    <label class="item item-input">
+      <textarea id="answerText" ng-model="questionText" placeholder="Comments" rows="8"></textarea>
+    </label>
+
+    <div class="row">
+        <button ng-click="sendAnswer()" class="button button-block button-positive">Send Answer</button>
+  
+    </div>
   </ion-content>
 </ion-view>
