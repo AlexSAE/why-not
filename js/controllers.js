@@ -15,7 +15,7 @@ angular.module('starter.controllers', [])
         }
     };
 
-    $http.post('api/questions.php?action=addQuestion', data, config).then(
+    $http.post('http://www.plagosus.net/pub/why-not/questions.php?action=addQuestion', data, config).then(
        function(response){
           window.location.href = '#/tab/home';
        }, 
@@ -40,7 +40,7 @@ angular.module('starter.controllers', [])
   /*$http.get('questions.json').success(function(data){
     $scope.questions = data;
   });*/
-  $http.get('http://localhost/why-not/api/questions.php?action=getQuestions').success(function(data){
+  $http.get('http://www.plagosus.net/pub/why-not/questions.php?action=getQuestions').success(function(data){
     $scope.questions = data;
   });
 
@@ -54,7 +54,7 @@ angular.module('starter.controllers', [])
   //$scope.chat = Chats.get($stateParams.chatId);
   $scope.answers = $stateParams.questionId;
 
-  $http.get('http://localhost/why-not/api/questions.php?action=getQuestions').success(function(data){
+  $http.get('http://www.plagosus.net/pub/why-not/questions.php?action=getQuestions').success(function(data){
     angular.forEach(data, function(value, key) {
       if (value.id == $stateParams.questionId) {
         $scope.question = value;
@@ -80,7 +80,7 @@ angular.module('starter.controllers', [])
     $http.post('api/questions.php?action=addAnswer', data, config).then(
        function(response){
             $("#answerText").val('');
-            $http.get('http://localhost/why-not/api/questions.php?action=getQuestions').success(function(data){
+            $http.get('http://www.plagosus.net/pub/why-not/questions.php?action=getQuestions').success(function(data){
               angular.forEach(data, function(value, key) {
                 if (value.id == $stateParams.questionId) {
                   $scope.question = value;
