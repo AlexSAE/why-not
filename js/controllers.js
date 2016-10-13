@@ -77,7 +77,7 @@ angular.module('starter.controllers', [])
     };
 
 
-    $http.post('api/questions.php?action=addAnswer', data, config).then(
+    $http.post('http://www.plagosus.net/pub/why-not/questions.php?action=addAnswer', data, config).then(
        function(response){
             $("#answerText").val('');
             $http.get('http://www.plagosus.net/pub/why-not/questions.php?action=getQuestions').success(function(data){
